@@ -33,7 +33,7 @@ for(let i = 0;i<filesArr.length;i++){
 let contentArr = content.split("\r\n");
 let NBcheck = false;
 for(let i = 0;i<optionArr.length;i++){
-    console.log(i+"-->"+optionArr[i]);
+    //console.log(i+"-->"+optionArr[i]);
     let contentArrNew = [];
     if(optionArr[i] == "-s"){
        contentArrNew = SPresent();
