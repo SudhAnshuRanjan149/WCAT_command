@@ -33,16 +33,20 @@ for(let i = 0;i<filesArr.length;i++){
 let contentArr = content.split("\r\n");
 let NBcheck = false;
 for(let i = 0;i<optionArr.length;i++){
+    console.log(i+"-->"+optionArr[i]);
+    let contentArrNew = [];
     if(optionArr[i] == "-s"){
-        SPresent();
+       contentArrNew = SPresent();
     }else if(optionArr[i] == "-n" && NBcheck == false){
-        NPresent();
+       contentArrNew = NPresent();
         NBcheck = true;
     }else if(optionArr[i] == "-b" && NBcheck == false){
-        BPresent();
+       contentArrNew = BPresent();
         NBcheck = true;
     }
-
+    if(contentArrNew.length != 0){
+    contentArr = contentArrNew;
+    }
 }
 
 // -s check
@@ -63,6 +67,7 @@ function SPresent(){
         }
     }
     contentArr = tempArr;
+    return contentArr;
 }
 //console.log(contentArr.join("\n"));
 
@@ -75,6 +80,7 @@ function NPresent(){
         
     }
     contentArr = tempArr;
+    return contentArr;
 }
 
 //let isBPresent = optionArr.includes("-b");
@@ -91,6 +97,7 @@ function BPresent(){
         
     }
     contentArr = tempArr;
+    return contentArr;
 }
 
 console.log(contentArr.join("\n"));
